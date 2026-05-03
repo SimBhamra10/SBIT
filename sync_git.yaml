@@ -7,11 +7,10 @@ pool:
 steps:
 - checkout: self
   persistCredentials: true
+  fetchDepth: 0   # 🔥 THIS IS THE FIX
 
 - script: |
     git remote remove github || true
     git remote add github https://$(GITHUB_PAT)@github.com/SimBhamra10/ADBLifeScienceProject.git
-
-    # Ensure we're pushing the current commit
     git push github HEAD:main --force
   displayName: "Force push to GitHub"
