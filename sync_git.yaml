@@ -12,5 +12,5 @@ steps:
 - script: |
     git remote remove github || true
     git remote add github https://$(GITHUB_PAT)@github.com/SimBhamra10/SBIT.git
-    git push github HEAD:main --force
+    git push github HEAD:release --force
   displayName: "Force push to GitHub"
