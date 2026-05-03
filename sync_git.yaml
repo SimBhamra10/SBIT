@@ -11,7 +11,7 @@ steps:
 - script: |
     git remote remove github || true
     git remote add github https://$(GITHUB_PAT)@github.com/SimBhamra10/ADBLifeScienceProject.git
-    git fetch github
-    git pull github main --allow-unrelated-histories
-    git push github HEAD:main
-  displayName: "Sync with GitHub"
+
+    # Ensure we're pushing the current commit
+    git push github HEAD:main --force
+  displayName: "Force push to GitHub"
