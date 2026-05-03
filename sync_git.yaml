@@ -3,5 +3,5 @@ trigger:
 
 steps:
 - script: |
-    git remote add github https://<github-url>
+    git remote add github https://github.com/SimBhamra10/ADBLifeScienceProject.git
     git push github main
