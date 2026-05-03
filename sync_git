@@ -1,0 +1,7 @@
+trigger:
+- main
+
+steps:
+- script: |
+    git remote add github https://<github-url>
+    git push github main
