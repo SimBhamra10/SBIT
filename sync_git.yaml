@@ -1,7 +1,15 @@
 trigger:
 - main
 
+pool:
+  vmImage: 'ubuntu-latest'
+
 steps:
+- checkout: self
+  persistCredentials: true
+
 - script: |
-    git remote add github https://github.com/SimBhamra10/ADBLifeScienceProject.git
+    git remote remove github || true
+    git remote add github https://$(GITHUB_PAT)@github.com/SimBhamra10/ADBLifeScienceProject.git
     git push github main
+  displayName: "Push to GitHub"
