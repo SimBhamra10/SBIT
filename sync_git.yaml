@@ -11,5 +11,6 @@ steps:
 - script: |
     git remote remove github || true
     git remote add github https://$(GITHUB_PAT)@github.com/SimBhamra10/ADBLifeScienceProject.git
-    git push github main
+    git branch
+    git push github HEAD:main
   displayName: "Push to GitHub"
